@@ -1,9 +1,9 @@
 const express = require("express");
-const graphqlHTTP = require("express-graphql");
-const app = express();
+const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
 
-app.use("/graphql", graphqlHTTP({ schema }));
+const app = express();
+app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
 const portNum = 4000;
 
