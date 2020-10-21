@@ -12,6 +12,7 @@ import {
 
 //  Components
 import BookList from "./components/BookList";
+import AddBook from "./components/AddBook";
 
 //  Apollo Client Setup
 const client = new ApolloClient({
@@ -28,6 +29,7 @@ function App() {
       <div id="main">
         <h1>MXS' Reading List &copy; 2020</h1>
         <BookList />
+        <AddBook />
       </div>
     </ApolloProvider>
   );

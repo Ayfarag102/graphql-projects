@@ -1,15 +1,6 @@
 import React from "react";
-import { gql, useQuery } from "@apollo/client";
-
-const BOOK_LIST = gql`
-  query GetBookList {
-    books {
-      title
-      id
-      genre
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { BOOK_LIST } from "../queries/queries";
 
 function BookList() {
   const { loading, error, data } = useQuery(BOOK_LIST);
@@ -19,8 +10,8 @@ function BookList() {
   return data.books.map(({ title, id, genre }) => (
     <div key={id}>
       <li>
-        <ul id="book-list">
-          {title} : {genre} : {id}
+        <ul id="book-list" type="disc">
+          {title}
         </ul>
       </li>
     </div>
